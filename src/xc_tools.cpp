@@ -1,14 +1,14 @@
+#define NO_IMPORT_ARRAY
+#include "import_npy_api.hpp"
 #include "xc_tools.hpp"
 #include <map>
 #include <Python.h>
-#include <numpy/ndarrayobject.h>
 #include <iostream>
 
 using namespace std;
 
 void get_positions( PyObject *pos_raw, vector<XcVector> &xc_pos )
 {
-  import_array();
   char* format=NULL;
   PyObject *pos = PyArray_FROM_OTF(pos_raw, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY );
   npy_intp* dims = PyArray_DIMS(pos);
