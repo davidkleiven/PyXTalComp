@@ -37,8 +37,6 @@ static PyObject* compare_xtalcomp( PyObject *self, PyObject *args )
   PyObject *cell1 = PyArray_FROM_OTF( cell1_raw, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY );
   PyObject* cell2 = PyArray_FROM_OTF( cell2_raw, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY );
 
-  cout << PyArray_DIMS(cell1) << endl;
-
   #ifdef DEBUG
     cout << "compare_xtalcomp: Converted PyObject to Numpy array\n";
   #endif
@@ -108,7 +106,7 @@ static PyMethodDef pyxtalcomp_methods[] = {
 #endif
 
 #if PY_MAJOR_VERSION >= 3
-  PyMODINIT_FUNC PyInit_pyxtalcomp(void)
+  PyMODINIT_FUNC PyInit_pyxtalcomp_cpp(void)
   {
     PyObject* module = PyModule_Create( &pyxtalcomp );
     import_array();
