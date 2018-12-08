@@ -43,3 +43,26 @@ reduce_cell = False
 match = compare_xtalcomp(positions1,symbs1, cell1,
           positions2, symbs2, cell2, cart_tol, angle_tol, reduce_cell)
 ```
+
+# Compare two ASE Atoms objects
+```python
+from pyxtalcomp import XtalCompASE
+from ase.build import bulk
+
+# Create Aluminium FCC atoms
+s1 = bulk("Al")
+s1 = s1 * (2, 2, 2)
+
+# Insert Mg impurity
+s1[0].symbol = "Mg"
+s2 = bulk("Al")
+s2 = s2 * (2, 2, 2)
+
+# Insert Mg impurity on a different place
+s2[3].symbol = "Mg"
+comp = XtalCompASE()
+
+# Check if the two atoms objects a symmetrically
+# equivalen (should evaluate to True)
+match = comp(s1, s2)
+```
