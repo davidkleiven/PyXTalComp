@@ -6,7 +6,7 @@
 #include <iostream>
 #include <map>
 #include <string>
-#define DEBUG
+//#define DEBUG
 
 using namespace std;
 
