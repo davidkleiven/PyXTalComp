@@ -1,4 +1,5 @@
 # PyXTalComp
+![Build status](https://travis-ci.org/davidkleiven/PyXTalComp.svg?branch=master)
 Python interface to the XTalComp code
 
 # Installation
