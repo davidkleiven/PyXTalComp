@@ -15,7 +15,8 @@ install:
   - make
   - sudo make install
   - cd ..
-  - pip install .
+  - pip install ase --user
+  - pip install . --user
 
 script:
   - python -m unittest discover tests/
