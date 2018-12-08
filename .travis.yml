@@ -7,6 +7,7 @@ python:
 
 before_install:
   - git clone https://github.com/allisonvacanti/XtalComp.git
+
 install:
   - sudo apt-get -qq update
   - sudo apt-get install cmake
@@ -15,8 +16,8 @@ install:
   - make
   - sudo make install
   - cd ..
-  - pip install ase --user
-  - pip install . --user
+  - pip install ase
+  - pip install .
 
 script:
   - python -m unittest discover tests/
