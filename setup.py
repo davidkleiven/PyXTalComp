@@ -1,4 +1,4 @@
-from setuptools import setup, Extension
+from setuptools import setup, Extension, find_packages
 import numpy as np
 
 module1 = Extension( "pyxtalcomp_cpp", sources=["src/pyxtalcomp.cpp","src/xc_tools.cpp"],
@@ -7,5 +7,7 @@ libraries=["XtalComp"])
 
 setup(
     name="pyxtalcomp",
-    ext_modules=[module1]
+    packages=find_packages(),
+    ext_modules=[module1],
+    install_requires=['ase', 'numpy']
 )
